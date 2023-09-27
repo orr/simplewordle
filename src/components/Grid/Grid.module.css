@@ -1,0 +1,11 @@
+.gridWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.row {
+    display: flex;
+    gap: .3rem;
+}
+

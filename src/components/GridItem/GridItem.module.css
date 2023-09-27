@@ -1,0 +1,20 @@
+.item {
+    border: 2px solid gray;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.green {
+    background-color: green;
+}
+
+.gray {
+    background-color: gray;
+}
