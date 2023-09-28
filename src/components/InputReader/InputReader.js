@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import styles from './InputReader.module.css';
 
 
-function InputReader({addGuess}) {
+function InputReader({addGuess, gameStatus, children}) {
   
   const [guess, setGuess] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
-    addGuess(guess);
+    addGuess(guess.toUpperCase());
     setGuess('');
   }
 
@@ -21,9 +21,12 @@ function InputReader({addGuess}) {
       <label htmlFor='guessInput'>
         Enter Guess:
       </label>
-      <input id='guessInput' type='text' 
+      <input id='guessInput' type='text' autoFocus 
         value={guess} onChange={(e) => handleChange(e.target.value)}
-      required={true} minLength={5} maxLength={5}  />
+      required={true}  maxLength={5}  minLength={5}
+        disabled={gameStatus !== 'PLAYING'}
+      />
+      {children}
     </form>
   );
 }

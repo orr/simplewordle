@@ -8,11 +8,20 @@ function Grid({cols, rows, guesses, answer}) {
   const rowsArray = Array(rows).fill('3');
   
   function getStatus(rIndex, cIndex) {
-    if ( guesses.length === 0 || guesses.length - rIndex <= 0  ) 
-      return 'WRONG';
-    if( (guesses[rIndex].value).charAt(cIndex) === answer.charAt(cIndex))
+    if ( guesses.length === 0 || guesses.length - rIndex <= 0  )  {
+     //console.log(rIndex +" "+ cIndex  +"empty");
+      return 'EMPTY';
+    }
+    if( (guesses[rIndex].value).charAt(cIndex) === answer.charAt(cIndex)) {
+      //console.log(rIndex +" "+ cIndex  +"corret "+ (guesses[rIndex].value).charAt(cIndex) + " "+ answer.charAt(cIndex) );
       return "CORRECT";
-    return "HALF_CORRECT";
+    }
+    else if( answer.indexOf((guesses[rIndex].value).charAt(cIndex)) >= 0 ){
+      //console.log(rIndex +" "+ cIndex  +"half");
+      return "HALF_CORRECT"
+    }
+    //console.log(rIndex +" "+ cIndex  +"wrong");
+    return "WRONG";
   }
 
   return (

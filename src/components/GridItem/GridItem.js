@@ -8,7 +8,9 @@ function GridItem({children, status}) {
       return styles.green;
     if( status === 'HALF_CORRECT')
       return styles.gray;
-    return ''
+      if( status === 'WRONG')
+      return styles.red;
+    return styles.empty;
   }
 
   return (

@@ -1,11 +1,18 @@
 .gridWrapper {
     display: flex;
     flex-direction: column;
-    gap: .3rem;
+    gap: 1rem;
+    padding: 3rem;
+    background-color: #ebdcdc;
+    border-radius: 5px;
+    min-width: 500px;
+    margin: 0 auto;
 }
 
 .row {
     display: flex;
-    gap: .3rem;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
 }
 
