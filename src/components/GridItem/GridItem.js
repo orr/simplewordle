@@ -21,7 +21,7 @@ function GridItem({children, status, gameStatus}) {
 
   return (
     <div className={styles.wrapper}>
-    <div className={`${styles.item} ${getStyle(status)}  ` } >
+    <div className={`${styles.item} ${getStyle(status)}   ` } >
       
       <div className={styles.back}>
         {children}
