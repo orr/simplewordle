@@ -2,7 +2,7 @@ import React from 'react';
 import GridItem from '../GridItem/GridItem';
 import styles from './Grid.module.css'
 
-function Grid({cols, rows, guesses, answer}) {
+function Grid({cols, rows, guesses, answer, gameStatus}) {
   
   const colsArray = Array(cols).fill('x');
   const rowsArray = Array(rows).fill('3');
@@ -24,6 +24,12 @@ function Grid({cols, rows, guesses, answer}) {
     return "WRONG";
   }
 
+  function getRotate(gameStatus, guesses, index) {
+    if ( gameStatus === 'WON' && guesses.length -1 === index)
+      return styles.pai;
+    return '';
+  }
+
   return (
     
   <div className={styles.gridWrapper}>
@@ -31,10 +37,10 @@ function Grid({cols, rows, guesses, answer}) {
       {
         
         rowsArray.map( (r, rIndex) => (
-          <div key={rIndex} className={styles.row}>
+          <div key={rIndex} className={`${styles.row} ${getRotate(gameStatus, guesses, rIndex)}`}>
             {
               colsArray.map( (c, cIndex) => (
-                <GridItem key={cIndex} status={getStatus(rIndex, cIndex)}>
+                <GridItem key={cIndex} status={getStatus(rIndex, cIndex)} gameStatus={gameStatus}>
                   { (guesses.length >= 0 && guesses.length - rIndex > 0  ) && (guesses[rIndex].value).charAt(cIndex)} 
                 </GridItem> 
               ))

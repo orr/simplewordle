@@ -16,3 +16,6 @@
     width: 100%;
 }
 
+.pai > div > div {
+    transform: rotateY(180deg);
+}

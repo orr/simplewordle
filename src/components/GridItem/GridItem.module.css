@@ -1,3 +1,17 @@
+
+
+.wrapper {
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    perspective: 1000px;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+
 .item {
     border: 3px solid gray;
     width: 60px;
@@ -9,6 +23,32 @@
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+
+.front, .back {
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.front {
+    
+}
+
+.back {
+    background-color: rgb(238, 238, 27);
+    color: black;
+    transform: rotateY(180deg);
+    font-size: 1.2rem;
 }
 
 .green {

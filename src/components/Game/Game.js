@@ -28,7 +28,7 @@ function Game() {
 
   return <>
   
-  <Grid cols={5} rows={6} guesses={guesses} answer={answer}/>
+  <Grid cols={5} rows={6} guesses={guesses} answer={answer} gameStatus={gameStatus}/>
   
   
     <InputReader addGuess={addGuess} gameStatus={gameStatus}>
